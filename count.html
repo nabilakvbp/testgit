@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Count</title>
+</head>
+<body>
+	<h1>NILAI COUNT</h1>
+	
+	<script>
+		var nama;
+		var pembilang=0;
+		var repeat = false;
+		
+		do 
+		{
+			nama = prompt("Masukkan nama yang dikehendaki:");
+			pembilang = pembilang +1 ;
+			
+			repeat = confirm("Adakah anda ingin masukkan nama yang lain?");
+			
+		} while (repeat == true);
+		
+		document.write(pembilang);
+	</script>
+</body>
+</html>
