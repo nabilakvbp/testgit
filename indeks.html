@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI</title>
+<style>
+body{
+    font-family: Helvetica;
+}
+</style>
+</head>
+<body>
+    <h1 class="bmi">KIRA BMI</h1>
+    <form>
+        <p class="berat">Berat(kg) : <input type="text" name="berat" id="berat"></p>
+        <p class="tinggi">Tinggi(m) : <input type="text" name="tinggi" id="tinggi"</p>
+    </form>
+
+			<input type="button" name="button" value="HANTAR" onclick="hantar()">
+			<input type="button" name="button" value="RESET" onclick="reset()">
+
+    <br>
+    <br>
+
+    <table border="1" colspan="10" rowspan="7" width="20%">
+        <tr>
+            <th>Berat</th>
+            <th>Tinggi</th>
+            <th>BMI</th>
+            <th>Keputusan</th>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="KEPUTUSAN"></td>
+        </tr>
+    </table>
+
+<script>
+    function hantar(){
+        var berat = parseFloat(document.getElementById('berat').value);
+        var tinggi = parseFloat(document.getElementById('tinggi').value);
+        
+        
+            // Calculate the average
+            var bmi = berat / (tinggi*tinggi);
+
+            // Determine the grade
+            var jumlah = "";
+            if (bmi < 18.5) {
+                jumlah = "KURUS";
+                document.getElementById('KEPUTUSAN').style.backgroundColor = "blue";
+
+            } else if (bmi >= 18.5 ) {
+                jumlah = "NORMAL";
+            } else if (bmi >= 25) {
+                jumlah = "GEMUK";
+            } else {
+                jumlah = "OBESITI";
+            }
+
+            // Display the results
+			document.getElementById("berat").
+            document.getElementById("bmi").textContent = bmi.toFixed(2);
+            
+        }
+
+    }
+
+    function reset() {
+        document.getElementById('berat').value = '';
+        document.getElementById('tinggi').value = '';
+    }
+</script>
+</body>
+</html>
